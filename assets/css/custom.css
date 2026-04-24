@@ -1,0 +1,67 @@
+/*In order to call font in css we fontface*/
+@font-face {
+  font-family: "Roboto";
+  src: url("../Fonts/Roboto/static/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Battambang";
+  src: url("../Fonts/Battambang/Battambang-Regular.ttf");
+}
+@font-face {
+  font-family: "Koulen";
+  src: url("../Fonts/Koulen/Koulen-Regular.ttf");
+}
+body {
+  font-family: "Battambang", "Roboto";
+  background-color: #f8f9fa;
+}
+
+h3 {
+  font-family: "Koulen", "Roboto";
+}
+h5 {
+  font-family: "Roboto", "Koulen";
+  font-size: small;
+}
+a.nav-link.active,
+a.nav-link {
+  font-family: "Koulen", "Roboto" !important;
+}
+a.nav-link {
+  color: rgb(127, 123, 127);
+}
+a.nav-link:hover,
+a.nav-link.active {
+  color: black !important;
+}
+.category_img {
+  border-radius: 60%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.category_img:hover {
+  transform: scale(1.08);
+}
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: red;
+}
