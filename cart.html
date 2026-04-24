@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+  </head>
+
+  <body>
+    <a
+      href="index.html"
+      class="btn btn-danger position-absolute top-0 end-0 m-3"
+      >✕</a
+    >
+    <div class="container mt-5 text-center">
+      <h2>Shopping Cart</h2>
+      <h6>Beauty skin Cosmetic</h6>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="cartTable"></tbody>
+      </table>
+
+      <h3 id="grandTotal"></h3>
+    </div>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let table = document.getElementById("cartTable");
+      let total = 0;
+
+      function showCart() {
+        table.innerHTML = "";
+        total = 0;
+
+        cart.forEach((item, index) => {
+          let row = `
+<tr>
+<td><img src="${item.image || ""}" width="45"></td>
+<td>${item.name}</td>
+<td>$${item.price}</td>
+<td>${item.qty}</td>
+<td>$${item.price * item.qty}</td>
+<td>
+<button class="btn btn-primary" onclick="deleteItem(${index})">
+Delete
+</button>
+</td>
+</tr>
+`;
+
+          table.innerHTML += row;
+
+          total += item.price * item.qty;
+        });
+
+        document.getElementById("grandTotal").innerText = "Total: $" + total;
+      }
+
+      function deleteItem(index) {
+        cart.splice(index, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        showCart();
+      }
+
+      showCart();
+    </script>
+  </body>
+</html>

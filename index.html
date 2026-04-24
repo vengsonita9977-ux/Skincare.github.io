@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBeauty Cosmetic</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+function addToCart(name, price, image){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+   name:name,
+   price:price,
+   image:image,
+   qty:1
+});
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+window.location.href = "cart.html";
+
+}
+</script>
+  </head>
+  <body>
+    <!-- start header website -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/Logo.png" width="110px" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link " href="#">ទំព័រដើម</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ប្រភេទទំនិញ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">អំពីពួកយើង</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ទំនាក់ទំនង</a>
+              </li>
+            </ul>
+            <div>
+              <a href="cart.html">
+                <i class="fa-solid fa-cart-arrow-down fs-3" style="color:black"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div
+      id="carouselExampleAutoplaying"
+      class="carousel slide"
+      data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="assets/images/banners/banner1.png"
+            class="d-block w-100"
+            data-bs-interval="100"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/images/banners/banner2.png"
+            class="d-block w-100"
+            data-bs-interval="100"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- end header website -->
+    <!-- start body website -->
+    <div class="container">
+      <h3 class="mt-5 text-center">ប្រភេទទំនិញ</h3>
+      <div class="row mt-5 gx-4 justify-content-center text-center">
+        <div class="col-6 col-md-2">
+          <a href="#skincare" class="text-decoration-none text-dark">
+            <img
+              src="assets/images/category/c1.png"
+              class="w-100 category_img"
+            />
+            <p class="mt-2">ស្គីនឃែរ</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-2">
+          <a href="#makeup" class="text-decoration-none text-dark">
+            <img
+              src="assets/images/category/c2.png"
+              class="w-100 category_img"
+            />
+            <p class="mt-2">គ្រឿងសំអាង</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-2">
+          <a href="#beautytool" class="text-decoration-none text-dark">
+            <img
+              src="assets/images/category/c3.png"
+              class="w-100 category_img"
+            />
+            <p class="mt-2">ឧបករណ៏សម្រាប់តុបតែងមុខ</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-2">
+          <a href="#supplement" class="text-decoration-none text-dark">
+          <img src="assets/images/category/c4.png" class="w-100 category_img">
+          <p class="mt-2">អាហារបំប៉នសម្រាប់សុខភាព</p>
+          </a>
+        </div>
+      </div>
+      <!--start top sell product-->
+      <h3 class="mt-5 text-center">ទំនិញដែរលក់ដាច់</h3>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <a href="product1.html">
+              <img
+              src="assets/images/category/aplb_lotion.jpg"
+              class="card-img-top w-100"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">APLB-Niacinamide Body Lotion(300ml)</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$5.00</p>
+                <button class="btn btn-primary" onclick="addToCart('APLB Body Lotion',5.00,'assets/images/category/aplb_lotion.jpg')">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <a href="product2.html">
+              <img
+              src="assets/images/category/hatomugi_uvcare.jpg"
+              class="card-img-top w-100"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Hatomugi Body UV Milky Gel SPF 50 PA++++</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$10.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Hatomugi Body UV', 10.00,'assets/images/category/hatomugi_uvcare.jpg')">Add to Cart</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/marvis_toothpaste.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Marvis-Whitening Mint toothpaste(85ml)</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$12.00</p>
+                <button class="btn btn-primary"
+onclick="addToCart(
+'Marvis-Whitening toothpaste',
+12.00,'assets/images/category/marvis_toothpaste.webp'
+)">
+Add to cart
+</button>
+
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/anti-hair.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Dr.Banggiwon-Lab Anti-Hair Loss(1000ml)</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$15.90</p>
+                <button class="btn btn-primary" onclick="addToCart('Dr.Banggiwon-Lab Anti-Hair Loss', 15.90,'assets/images/category/anti-hair.webp')">Add to Cart</button>
+                
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/dhc.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">DHC-Ance Control Spot Essence(15g)</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$16.50</p>
+                <button class="btn btn-primary" onclick="addToCart('DHC-Ance Control Spot Essence', 16.50,'assets/images/category/dhc.jpg')">Add to Cart</button>
+                
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <!--skin care product-->
+      <h3 id="skincare" class="mt-5 text-center">ផលិតផលស្គីនឃែរ</h3>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img src="assets/images/category/medicube.webp"class="card-img-top w-100"/>
+            <div class="card-body">
+              <h5 class="card-title">Medicube PDRN Pink Capsule Cream(55g)</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$12.50</p>
+                <button class="btn btn-primary" onclick="addToCart('Medicube PDRN Pink Capsule Cream', 12.50,'assets/images/category/medicube.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/anua_cleaning_oil.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Anua Heartleaf Pore Cleaning Oil</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$12.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Anua Cleanin Oil', 12.00,'assets/images/category/anua_cleaning_oil.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/aplb_cream.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">APLB-Facial Cream(55ml)</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$7.00</p>
+                <button class="btn btn-primary" onclick="addToCart('APLB-Facial Cream(55ml)', 7.00,'assets/images/category/aplb_cream.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/thelavicos.png"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                Thelavicos-Toning Facial Pad(70ea)
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$20.00</p>
+                <button class="btn btn-primary"onclick="addToCart('Thelavicos-Toning Facial Pad', 20.00,'assets/images/category/thelavicos.png')">Add toCart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/mediflower.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                MediFlower-Panthenol Ampoule
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$17.50</p>
+                <button class="btn btn-primary" onclick="addToCart('MediFlower-Panthenol Ampoule', 17.50,'assets/images/category/mediflower.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img src="assets/images/category/skin1004.webp"class="card-img-top w-100"/>
+            <div class="card-body">
+              <h5 class="card-title">Skin1004-Centella Water Suncream</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$12.50</p>
+                <button class="btn btn-primary" onclick="addToCart('Skin1004-Centella Water Suncream', 12.50,'assets/images/category/skin1004.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--make up product-->
+      <h3 id="makeup" class="mt-5 text-center">ផលិតផលគ្រឿងសំអាង</h3>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/romand.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">&nd By Rom&nd Glassy Balm</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$4.00</p>
+                <button class="btn btn-primary" onclick="addToCart('&nd By Rom&nd Glassy Balm', 4.00,'assets/images/category/romand.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/3ce.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">3CE Makeup Fix Powder</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$18.00</p>
+                <button class="btn btn-primary" onclick="addToCart('3CE makeup Fix POwder', 18.00,'assets/images/category/3ce.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/aou.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">AOU <S></S>oft Cream Blush</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$7.00</p>
+                <button class="btn btn-primary" onclick="addToCart('AOU Soft Cream Blush', 7.00,'assets/images/category/aou.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/3ce_shadow.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">3CE Eyeshadow Palettes</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$9.50</p>
+                <button class="btn btn-primary" onclick="addToCart('3CE EyeShadow Palettes', 9.50,'assets/images/category/3ce_shadow.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--beauty tool product-->
+      <h3 id="beautytool" class="mt-5 text-center">ឧបករណ៏សម្រាប់តុបតែងមុខ</h3>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/veecci.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Veecci Makeup Brush + Grey Bag</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$7.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Veecci makeup Bush + Grey Bag', 7.00,'assets/images/category/veecci.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/cotton_puff.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Veecci Cotton Candy Puff</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$1.50</p>
+                <button class="btn btn-primary" onclick="addToCart('Veecci cotton Candy Puff', 1.50,'assets/images/category/cotton_puff.webp')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/etube.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Etube Eye Brown Razor</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$1.50</p>
+                <button class="btn btn-primary" onclick="addToCart('Etube Eye Brown Razor', 1.50,'assets/images/category/etube.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/eyelash_curler.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title"> Shiseido EyeLash Curler</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$6.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Shiseido EyeLash Curler', 6.00,'assets/images/category/eyelash_curler.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/eyelash.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kiss Couture 3D Faux lash</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$5.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Kiss Counture 3D Faux Lash', 5.00,'assets/images/category/eyelash.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--supplyment product-->
+      <h3 id="supplement" class="mt-5 text-center">អាហារបំប៉នសម្រាប់សុខភាព</h3>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/vida_glow.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                Vida Glow-Collagen(12.4ml)
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$58.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Vida Glow-collagen', 58.00,'assets/images/category/vida_glow.webp')">Add toCart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/bb_lab.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                BB lab Glutathione Collagen(30 Sticks)
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$14.00</p>
+                <button class="btn btn-primary" onclick="addToCart('BB lab Glutathione Collagen', 14.00,'assets/images/category/bb_lab.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/teddi_lab.webp"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                Teddi lab Probiotic Gummies(60pcs)
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$22.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Teddi Lab Probiotic Gummie', 22.00,'assets/images/category/teddi_lab.webp')">Add toCart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card">
+            <img
+              src="assets/images/category/aplb_supplyment.jpg"
+              class="card-img-top w-100"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                APLB-Gluta Niaci-Beauty Tablets
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="text-danger fw-bold mb-0">$7.50</p>
+                <button class="btn btn-primary" onclick="addToCart('APLB-Gluta Niaci-Beauty Tablets', 7.50,'assets/images/category/aplb_supplyment.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end body wbesite -->
+
+    <footer></footer>
+
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+  </body>
+</html>
